@@ -89,8 +89,45 @@ static void EscolhaPersonagem(){
 			  JOptionPane.showMessageDialog( null, " Valor invalido, tente novamente" );			 
 	 }
 		
+		 JOptionPane.showMessageDialog( null, " Logo após se lembrar de seu passado e entender seu povo, você se depara \n"
+		 		                            + " com a aproximação de uma guerra que pode por um fim a sua raça e seu planeta. \n "
+		 		                            + "\n"
+		 		                            + "Sua missão é infiltrar-se em território inimigo e descobrir possíveis fraquezas....\n"
+		 		                            + "\n"
+		 		                            + "Seu general então lhe entrega documentos , neles contém um dispositivo capaz de cortar a \n"
+		 		                            + "comunicação das naves inimigas e uma rota que demonstra uma pequena passagem para \n"
+		 		                            + "entrar em território inimigo sem ser descoberto, porem essa passagem esta sob vigia de guardiões ..... ");
+	
+			dado2 =  JOptionPane.showInputDialog("Digite '1' para rodar o dado: ");	
+			int dado3 = Integer.parseInt(dado2);
+			 dado3 = dado(dado3);
+			 
+			 switch (dado3) {
+			case 1:
+				JOptionPane.showMessageDialog( null, " morreu1" );		
+				break;
+			case 2:
+				JOptionPane.showMessageDialog( null, " morreu2" );		
+				break;
+			case 3:
+				JOptionPane.showMessageDialog( null, " morreu3" );		
+				break;
+			case 4:
+				JOptionPane.showMessageDialog( null, " morreu4" );		
+				break;
+			case 5:
+				JOptionPane.showMessageDialog( null, " morreu5" );		
+				break;
+			case 6:
+				JOptionPane.showMessageDialog( null, " morreu6" );		
+				break;
+
+			default: JOptionPane.showMessageDialog( null, " morreu" );	
+				break;
+			}
+			
  	    //}while((!raca.equalsIgnoreCase("1") && !raca.equalsIgnoreCase("2"))                 IGNORAR
-                    //|| (!TipoHumano.equalsIgnoreCase("1") && !TipoHumano.equalsIgnoreCase("2")) FODASE
+                    //|| (!TipoHumano.equalsIgnoreCase("1") && !TipoHumano.equalsIgnoreCase("2")) FODASE	
                     //|| (!TipoET.equalsIgnoreCase("1") && !TipoET.equalsIgnoreCase("2")) );      .
 		
 		
