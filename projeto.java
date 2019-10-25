@@ -139,7 +139,7 @@ static void EscolhaPersonagem(){
 	//	int dado2 = dado(b);
 	//	System.out.println(dado2);
 		
-		
+		System.out.print("gay");
 	}
 
 }
