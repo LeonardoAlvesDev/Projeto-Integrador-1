@@ -107,13 +107,21 @@ public class ProjetoScript {
 
                 case "1":
                     // instruções do jogo
-                    JOptionPane.showMessageDialog(null, "Como jogar:\r\n\n"
-                            + "1 - Nosso RPG consiste em um desenvolvimento da nave, os personagens são utilizados\n\r"
-                            + "para dar diferentes características a ela, por parte dos atributos que podem tanto ser \n\r"
-                            + "adicionados quanto retirados.\r\n\n"
-                            + "2 - Você deve escolher entre as raças Humano ou Extraterrestre, dentre essas duas raças \n\r"
-                            + "você também escolherá entre 4 classes, duas delas são humanos e as outras duas são \n\r"
-                            + "extraterrestres.\r\n" + "");
+                	 JOptionPane.showMessageDialog(null, "1-	Suas ações são baseadas na soma de seus atributos multiplicado pelo número\n "
+	                            + "tirado no dado o número resultante dessa multiplicação é o dano aplicado no inimigo.\r\n" + 
+	                              "\r\n" + 
+                           	  "2-	Em alguma determinada situação do jogo você será obrigado a escolher entre dois\n "
+                           	  + "caminhos, sendo que em um deles você poderá adquirir mais atributos e o outro novas\n"
+                           	  + "tecnologias e um modo de jogo diferenciado do padrão, também determinará o caráter do\n "
+                           	  + "seu personagem o que será muito importante no decorrer do jogo.\r\n" + 
+	                              "\r\n" + 
+                                 "3-	Você começará com uma nave padrão e dependendo da raça e classe que escolher isso\n"
+                                 + "determinará o quanto mais de atributos essa nave irá receber ou o quanto será retirado\n"
+                                 + "também, as batalhas vão deixando sua nave cada vez mais fraca, então é importante tomar\n "
+                                 + "cuidado para que sua vida não chegue a zero, caso isso aconteça, será o fim de jogo, algumas\n"
+                                 + "batalhas diferenciadas contão também com outras características que caso cheguem a zero \n"
+                                 + "será o fim de jogo.\r\n" + 
+	                              "\r\n","Como Jogar:",JOptionPane.INFORMATION_MESSAGE);
                     break;
 
                 case "2":
@@ -841,7 +849,7 @@ public class ProjetoScript {
                             dado3 = dado(dado3);
 
                             int danoPistola = 15;
-                            int dano = danoPistola * totalSoma;
+                            int dano = danoPistola * dado3;
                             switch (dado3) {
 
                                 case 1:
@@ -924,9 +932,6 @@ public class ProjetoScript {
                      	 		 
                      		}
                      		
-                     		else {
-                     			//JOptionPane.showMessageDialog( null,mochila[i] );
-                     		}	 	
                      	}
                         
                         mochila[0] = "Pistola";
@@ -964,7 +969,7 @@ public class ProjetoScript {
                           int danoSniper = 30;
                           int vidaSegurancas[] = {100,100};
                           if(itensMochila.equals("Sniper")) {
-                        	 do {          
+                        	     
                         		 do {
                                      dado2 = JOptionPane.showInputDialog("Digite '1' para rodar o dado: ");
 
@@ -977,21 +982,40 @@ public class ProjetoScript {
                               switch (dado3) {
                               
 							case 1:
-								  JOptionPane.showMessageDialog(null, " Você errou o tiro chamando a atenção dos guardas\n"
-								  									+ " que revidaram ");
+								  JOptionPane.showMessageDialog(null, " Você errou o tiro e os guardas revidaram ");
 								  vidaPersonagem[0]-=10;
+								  
 								break;
 							case 2:
-								  JOptionPane.showMessageDialog(null, "Dano " +dano+ " Voce acertou o tiro porém não foi o suficiente para um HK");
+								  JOptionPane.showMessageDialog(null, "Dano " +dano+ " Voce acertou o tiro porém não foi o suficiente para matalos");
 								  vidaSegurancas[0]-=dano;
 								  break;
 							case 3:
 								  JOptionPane.showMessageDialog(null, "Dano " +(dano + 10 )+ " Critico, voce matou o primeiro segurança");
 								  vidaSegurancas[0]-=dano;
+								  break;
 							default:
 								
 							}
-                         }while(vidaPersonagem[0]>0 && vidaSegurancas[0]>0); 
+                              mochila[1] = "'Vazio'";
+                              
+                              if(vidaSegurancas[0] <=0) {
+                            	  vidaSegurancas[0] = 0;
+                            	  JOptionPane.showMessageDialog(null, "Você matou um segurança... resta apenas 1\n"
+                            	  		+ "escolha sua arma");
+                            	   itensMochila = JOptionPane.showInputDialog(null,"Mochila","Escolha", JOptionPane.INFORMATION_MESSAGE, 
+                            	             null, mochila, mochila[0]); 
+                            	   
+                            	   if(itensMochila.equals("Pistola")) {
+                            		   
+                            		   
+                            	   }
+                              }
+                              else {
+                            	  JOptionPane.showMessageDialog(null, "escola sua arma... ainda tem muita batalha pela frente");
+                            	   itensMochila = JOptionPane.showInputDialog(null,"Mochila","Escolha", JOptionPane.INFORMATION_MESSAGE, 
+                            	             null, mochila, mochila[0]); 
+                              }
                         	 
                         
                           }
