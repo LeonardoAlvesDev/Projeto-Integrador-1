@@ -191,7 +191,15 @@ public class ProjetoScript {
                     }
 
                     // introdução da história
-               Path caminho = Paths.get("C:/Users/Gabriel/Desktop/Arquivos Projeto/teste.txt");   
+                    JOptionPane.showMessageDialog(null, " era habitante do planeta “-B -B -B” porém\r\n" + 
+                    		"uma grande guerra entre duas facções, que buscavam o poder\r\n" + 
+                    		"absoluto, acabou com a destruição do planeta por completo.\r\n" + 
+                    		"Agora ele viaja pela galáxia buscando trazer a paz aos planetas que \r\n" + 
+                    		"estão em guerra para que os inocentes não acabem pagando pela\r\n" + 
+                    		"ignorância de seus comandantes.");
+                    
+                    // importa o texto de fora do código
+             /*  Path caminho = Paths.get("C:/Users/Gabriel/Desktop/Arquivos Projeto/teste.txt");   
                     try {
                     	byte[] texto = Files.readAllBytes(caminho);
                     	String leitura = new String(texto);
@@ -199,7 +207,7 @@ public class ProjetoScript {
                                   nick + leitura);                   	
                     } catch(Exception e) {
                     	
-                    }
+                    }*/
                   
 
                     JOptionPane.showMessageDialog(null,
@@ -228,7 +236,9 @@ public class ProjetoScript {
                     int countBatalha01 = 0;
                     int dado3 = 0;
 
+                    // faz um loop enquanto a sua vida ou a do inimigo são maiores que 0
                     do {
+                    	//validação para rodar o dado
                         do {
                             dado2 = JOptionPane.showInputDialog("Digite '1' para rodar o dado: ");
 
@@ -241,6 +251,7 @@ public class ProjetoScript {
                         dado3 = dado(dado3);
 
                         do {
+                        	// validação na colocação dos atributos
                             somaAtributos = JOptionPane.showInputDialog("Digite o total de seus atributos: ");
 
                             if (somaAtributos == null) {
@@ -966,10 +977,11 @@ public class ProjetoScript {
                           
                           JOptionPane.showMessageDialog( null,"Dois seguranças chegam ao local e você tem que eliminá-los...\n"
                           		                            + "escolha sua arma");
-                         
+                         do {
                           itensMochila = JOptionPane.showInputDialog(null,"Mochila","Escolha", JOptionPane.INFORMATION_MESSAGE, 
                   	             null, mochila, mochila[0]); 
-                          
+                         }while(!itensMochila.equals("Sniper") && !itensMochila.equals("Pistola"));
+                         
                           int vidaSegurancas[] = {100,100};
                           if(itensMochila.equals("Sniper")) {
                         	   JOptionPane.showMessageDialog(null,"Pontos de vida = " + vidaPersonagem[0] + "\nVida segurança 1 = " +vidaSegurancas[0]
@@ -1010,8 +1022,10 @@ public class ProjetoScript {
                             	  vidaSegurancas[0] = 0;
                             	  JOptionPane.showMessageDialog(null, "Você matou um segurança... resta apenas 1\n"
                             	  		+ "Escolha sua arma");
-                            	   itensMochila = JOptionPane.showInputDialog(null,"Mochila","Escolha", JOptionPane.INFORMATION_MESSAGE, 
-                            	             null, mochila, mochila[0]); 
+                            	  do {
+                                      itensMochila = JOptionPane.showInputDialog(null,"Mochila","Escolha", JOptionPane.INFORMATION_MESSAGE, 
+                              	             null, mochila, mochila[0]); 
+                                     }while( !itensMochila.equals("Pistola"));
                             	   
                             	   if(itensMochila.equals("Pistola")) {
                             		   JOptionPane.showMessageDialog(null,"Pontos de vida = " + vidaPersonagem[0] + "\nVida segurança 1 = " +vidaSegurancas[0]
@@ -1693,7 +1707,7 @@ public class ProjetoScript {
                               }while( vidaEsquadra[1]>0 && vidaNave[0]>0 && count<2);
                            	   
                            	   if(vidaEsquadra[1] == 0) {
-                           		 JOptionPane.showMessageDialog(null, "Parabéns!! você sozinho conseguiu aniquilar Jhon Pane e agora possui o Printeasy a seu favor");
+                           		 JOptionPane.showMessageDialog(null, "Parabéns!!"+nick+" você sozinho conseguiu aniquilar Jhon Pane e agora possui o Printeasy a seu favor");
                            		   
                            	   }
                            	   else if(count == 2) {
